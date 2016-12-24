@@ -1,0 +1,90 @@
+<div class="panel">
+<!-- panel ：面板 -->
+	
+	<div class="panel-body diy-detail" >
+		<ion-slide-box>
+		  <ion-slide>
+		    <div class="box"><img ng-src="{{IMAGEPATH + diydetail.images[0].image_name}}" alt=""></div>
+		  </ion-slide>
+		  <ion-slide>
+		    <div class="box"><img ng-src="{{IMAGEPATH + diydetail.images[1].image_name}}" alt=""></div>
+		  </ion-slide>
+		  <ion-slide>
+		    <div class="box"><img ng-src="{{IMAGEPATH + diydetail.images[2].image_name}}" alt=""></div>
+		  </ion-slide>
+		  <ion-slide on-slide-changed="slideHasChanged(index)">
+		    <div class="box"><img ng-src="{{IMAGEPATH + diydetail.images[3].image_name}}" alt=""></div>
+		  </ion-slide>
+		</ion-slide-box>
+		<div class="text-left">
+		    <a style="font-size: 18px;color: #333">
+			    <i class="icon ion-ribbon-b energized"></i>
+			  	朵拉DIY:  &nbsp;{{diydetail.title}}
+			</a>
+		</div>
+		<br>
+		<div class="text-left">
+		    <a style="font-size: 30px;color: red;">
+			    {{diydetail.price | currency : "&yen;"}}
+			    <button class="button button-outline button-assertive button-small">&nbsp;
+				 年末大促
+				</button>
+			</a>
+		</div>
+		<br>
+		<div class="text-left row" style="font-size: 13px;color: #999">
+			  <div class="col">快递： 7.00元</div>
+			  <div class="col">月销： {{diydetail.sale}}</div>
+			  <div class="col">库存： {{diydetail.store}}</div>
+		</div>
+		<div class="text-left row" style="font-size: 16px;color: #999">
+			  <div class="col"><i class="icon ion-ribbon-b"></i> ifashion 年轻人的DIY潮流世界</div>
+		</div>
+		<div class="row" style="font-size: 13px;color: #999">
+			<div class="col"><i class="icon ion-checkmark-circled"></i> 卖家承诺7天内发货</div>
+			<div class="col"><i class="icon ion-checkmark-circled"></i> 七天无理由退换</div>
+		</div>
+		<br>
+		<!-- <div class="row">
+			<div class="col-xs-12">
+				<dl class="dl-horizontal">
+					<dt>名称</dt>
+					<dd>{{diydetail.title}}</dd>
+					<dt>价格</dt>
+					<dd>{{diydetail.price | currency : "&yen;"}}</dd>
+
+					<dt>库存</dt>
+					<dd>{{diydetail.store}}</dd>
+					
+					<dt>余量</dt>
+					<dd>{{diydetail.sale}}</dd>
+
+
+					<dt>发布时间</dt>
+					<dd>{{diydetail.uptime * 1000 | date : "yyyy-MM-dd HH:MM:ss"}}</dd>
+				</dl>
+			</div>
+		</div> -->
+
+		<div>
+			<button class="button icon-left ion-ios-cart button-positive" ng-click="addShopcara(diydetail)">加入购物车</button>
+			<button class="button icon-left button-assertive ion-bag">直接购买</button>
+		</div>
+		<br>
+		<div class="panel-footer">
+			<a href="#/diyList" class="btn btn-info">返回商品列表</a>
+		</div>
+		<div class="row">
+			<div class="col-sm-12">
+				{{diydetail.des}}
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-sm-12 col-md-8 col-md-offset-2">
+				<img ng-src="{{IMAGEPATH+img.image_name}}" alt="" ng-repeat="(key,img) in diydetail.images" ng-hide="key === 0">
+				<!-- ng-hide="key === 0" 隐藏第一张-->
+			</div>
+		</div>
+	</div>
+	
+</div>

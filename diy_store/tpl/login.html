@@ -1,0 +1,30 @@
+<div class="padding text-center">
+  	<h1>
+    	<i class="energized ion-social-octocat"></i>
+  	</h1>
+  	<h2 class="energized">朵拉朵拉</h2>
+  	<p class="energized">Mobile DMall</p>
+</div>
+
+
+
+	<div class="col">
+	<!-- ng-submit用于表单提交 -->
+		<form name="regForm" ng-submit="doLogin()">
+			<!-- form中不要action -->
+
+			<div class="list list-inset">
+				<label class="item item-input" for="username">
+				    <input type="text" placeholder="用户名" id="username" ng-model="username">
+				</label>
+				<label class="item item-input" for="pwd">
+				    <input type="password" placeholder="密码" id="pwd" ng-model="pwd">
+				</label>
+			</div>
+			<div class="padding">
+				<button class="button button-block button-energized">
+					登 录
+				</button>
+			</div>
+		</form>
+	</div>

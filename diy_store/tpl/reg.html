@@ -1,0 +1,31 @@
+<div class="padding text-center">
+  	<h1>
+    	<i class="balanced ion-ios-paw"></i>
+  	</h1>
+  	<h2 class="balanced">朵拉朵拉</h2>
+  	<p class="balanced">Mobile DMall</p>
+</div>
+
+	<div class="col-md-12">
+	<!-- ng-submit用于表单提交 -->
+		<form name="regForm" ng-submit="doRegister()">
+			<!-- form中不要action -->
+			<div class="list list-inset">
+				<label class="item item-input" for="username">
+				    <input type="text" placeholder="用户名" id="username" ng-model="username" ng-blur="usernameCheck()">
+				    <span ng-show="name" style="color:red;padding-right: 10px">用户名已存在</span>
+				</label>
+				<label class="item item-input" for="pwd">
+				    <input type="password" placeholder="密码" id="pwd" ng-model="pwd">
+				</label>
+				<label class="item item-input" for="pwd">
+				    <input type="password" placeholder="确认密码" id="repwd" ng-model="repwd">
+				    <span ng-show="pass" style="color:red;padding-right: 10px">两次密码不一致</span>
+				</label>
+			</div>
+			<div class="padding">
+				<button class="button button-block button-balanced" ng-disabled="submitcheck">注 册</button>
+			</div>
+
+		</form>
+	</div>

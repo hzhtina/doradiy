@@ -1,0 +1,29 @@
+<!-- <div class="row">
+	<div class="col-sm-4">
+		<input type="text" ng-model="search" placeholder="搜索内容..." class="form-control">
+	</div>
+	<div class="col-sm-4">
+		<select ng-model="orderByType" class="form-control"> --><!-- orderByType 用于做排序 -->
+			<!-- <option value="price">价格</option>
+			<option value="sale">销量</option>
+			<option value="uptime">日期</option>
+		</select>
+	</div>
+</div> -->
+
+
+		
+<div class="list" ng-repeat="diy in diyList">
+		<div class="item item-thumbnail-left">
+		<!-- 点击时进入对应的详情页面 -->
+			<img ng-src="{{IMAGEPATH + diy.images[0].image_name}}" alt="">
+			<h2>{{diy.title}}</h2>
+			<p> {{diy.price | currency:"&yen;"}} </p>
+			<div style="padding-left: 40px">
+				<button class="button icon-left ion-ios-cart button-positive button-small" ng-click="addShopcar(diy)">加入购物车</button>
+				<button class="btn icon-left btn-danger ion-bag button-small"><a ng-href="#/diyDetail/{{diy.id}}" style="color:#fff">查看商品详情</a></button>
+			</div>
+		</div>
+				
+</div>
+

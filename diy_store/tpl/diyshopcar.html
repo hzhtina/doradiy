@@ -1,0 +1,42 @@
+<div class="panel">
+<!-- panel ：面板 -->
+    <div class="panel-heading">
+        <h3>购物车商品详情</h3>
+    </div>
+
+    <div class="list" ng-repeat="(key,car) in carList">
+        <a class="item item-thumbnail-left">
+          <img ng-src="{{IMAGEPATH+car.product_images}}">
+          <h2>{{ car.product_name }}</h2>
+          <div class="row">
+              <div class="col">{{ car.product_price | currency : "&yen;"}}</div>
+              <div class="col-40">小计：{{ car.shopcar_num * car.product_price | currency : "&yen;" }}</div>
+          </div>
+          <div class="row">
+                <div class="col">
+                    <button class="btn btn-default btn-sm" ng-click="minusShopcarNum(key)" data-toggle="tooltip" data-placement="top" title="只剩一件了" id="minusBtn{{key}}">
+                            <span class="glyphicon glyphicon-minus"></span>
+                    </button>
+                    {{ car.shopcar_num }}
+                    <button class="btn btn-default btn-sm" ng-click="addShopcarNum(key)">
+                        <span class="glyphicon glyphicon-plus"></span>
+                    </button>
+                </div>
+                <div class="col"></div>
+                <div class="col-5" style="font-size:30px">
+                  <i class="icon ion-trash-a assertive" ng-click="deleteShopcar(key)"></i>
+                </div>
+          </div>
+        </a>
+    </div> 
+    <div><h4>所有商品总价： {{ total | currency : "&yen;"}}</h4></div>
+    <br>
+    <div class="row" >
+        <div class="col"></div>
+        <div class="col-45">
+            <a href="#/diyList" class="btn btn-info">继续购物</a>
+            <a href="#/diyOrder" class="btn btn-primary">结算</a>
+        </div>
+       
+    </div>
+</div>
